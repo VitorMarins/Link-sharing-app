@@ -1,0 +1,38 @@
+{
+  "name": "Link-Sharing_backend",
+  "version": "1.0.0",
+  "description": "Backend for the Link-Sharing app",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "start:prod": "node build/src/index.js",
+    "build": "rimraf ./build && tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "link-sharing",
+    "backend"
+  ],
+  "author": "Vitor Marins",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.4.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.0.1",
+    "prettier": "^3.8.4",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
