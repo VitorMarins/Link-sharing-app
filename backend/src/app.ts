@@ -1,7 +1,7 @@
-import express from "express";
+import express, { Application } from "express";
 
 class App {
-  public app: express.Application;
+  private app: Application;
 
   constructor() {
     this.app = express();
@@ -23,6 +23,10 @@ class App {
     appRuning.on("error", (e: Error) => {
       console.error("Erro no servidor:", e);
     });
+  }
+
+  public getApp(): Application {
+    return this.app;
   }
 }
 
