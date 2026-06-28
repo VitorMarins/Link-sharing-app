@@ -1,4 +1,5 @@
-import express, { Application } from "express";
+import express from "express";
+import type { Application } from "express";
 
 class App {
   private app: Application;
