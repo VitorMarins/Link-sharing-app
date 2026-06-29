@@ -143,4 +143,5 @@ vite.config.ts.timestamp-*
 .vite/
 
 # Prisma files 
-/generated/prisma
+# generated/prisma/
+generated/
