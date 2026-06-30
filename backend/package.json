@@ -2,7 +2,7 @@
   "name": "Link-Sharing_backend",
   "version": "1.0.0",
   "description": "Backend for the Link-Sharing app",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "start": "tsx src/index.ts",
     "start:prod": "node build/src/index.js",
