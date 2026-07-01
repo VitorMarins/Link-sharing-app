@@ -11,24 +11,33 @@ export class UserRepository implements IUsersRepository {
   }
 
   async findAll() {
-    return await prisma.user.findMany();
+    return await prisma.user.findMany(
+      {
+        include: {
+          links: true,
+        },
+      }
+    );
   }
 
   async findById(id: string) {
     return await prisma.user.findUnique({
       where: { id: id },
+      include: { links: true },
     });
   }
 
   async findByEmail(emailParam: string) {
     return await prisma.user.findUnique({
       where: { email: emailParam },
+      include: { links: true },
     });
   }
 
   async findByUsername(usernameParam: string) {
     return await prisma.user.findUnique({
       where: { username: usernameParam },
+      include: { links: true },
     });
   }
 
