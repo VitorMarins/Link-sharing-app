@@ -1,5 +1,7 @@
 import express from "express";
 import type { Application } from "express";
+import morgan from "morgan";
+import { userRoutes } from "./routes/UserRoutes";
 
 class App {
   private app: Application;
@@ -13,9 +15,12 @@ class App {
   private middlewares() {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(morgan("dev"));
   }
 
-  private routes() {}
+  private routes() {
+    this.app.use("/users", userRoutes);
+  }
 
   public Start(port: number) {
     const appRuning = this.app.listen(port, () => {
