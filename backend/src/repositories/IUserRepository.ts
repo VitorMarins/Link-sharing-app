@@ -1,12 +1,11 @@
+import type { CreateLinkData, UpdateLinkData, LinkDTO } from './ILinksRepository';
+
 export interface CreateUserData {
   name: string;
   email: string;
   password: string;
   username: string;
-  Links?: {
-    title: string;
-    url: string;
-  }[];
+  Links?: CreateLinkData[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -16,10 +15,7 @@ export interface UpdateUserData {
   email: string;
   password: string;
   username: string;
-  Links?: {
-    title: string;
-    url: string;
-  }[];
+  Links?: UpdateLinkData[];
   updatedAt: Date;
 }
 
@@ -29,13 +25,7 @@ export interface UserDTO {
   email: string;
   password: string;
   username: string;
-  Links?: {
-    id: string;
-    title: string;
-    url: string;
-    userId: string;
-    createdAt: Date;
-  }[];
+  Links?: LinkDTO[];
   createdAt: Date;
   updatedAt: Date;
 }
