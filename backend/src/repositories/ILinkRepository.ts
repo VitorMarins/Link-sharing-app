@@ -10,7 +10,7 @@ export interface UpdateLinkData {
     title?: string;
     url?: string;
     createdAt?: Date;
-    updatedAt?: Date;
+    updatedAt: Date;
 }
 
 export interface LinkDTO {
