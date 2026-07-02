@@ -6,7 +6,7 @@ export class LinkRepository implements ILinksRepository {
         return await prisma.link.create({ data });
     }
 
-    async findall() {
+    async findAll() {
         return await prisma.link.findMany();
     }
 

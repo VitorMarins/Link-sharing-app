@@ -13,8 +13,8 @@ export class LinkService {
         });
     }
 
-    async findall() {
-        return await this.linksRepository.findall();
+    async findAll() {
+        return await this.linksRepository.findAll();
     }
 
     async findById(id: string) {

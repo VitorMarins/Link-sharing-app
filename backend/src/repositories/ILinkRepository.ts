@@ -24,7 +24,7 @@ export interface LinkDTO {
 
 export interface ILinksRepository {
     create(data: CreateLinkData): Promise<LinkDTO>;
-    findall(): Promise<LinkDTO[]>;
+    findAll(): Promise<LinkDTO[]>;
     findById(id: string): Promise<LinkDTO | null>;
     findByUserId(userId: string): Promise<LinkDTO[]>;
     update(id: string, data: Partial<UpdateLinkData>): Promise<LinkDTO>;
