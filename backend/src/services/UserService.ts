@@ -2,6 +2,7 @@ import { hashPassword } from "../utils/password";
 import type {
   IUsersRepository,
   CreateUserData,
+  UpdateUserData,
 } from "../repositories/IUserRepository";
 
 export class UserService {
@@ -43,7 +44,7 @@ export class UserService {
     return user;
   }
 
-  async update(id: string, data: Partial<CreateUserData>) {
+  async update(id: string, data: Partial<UpdateUserData>) {
     try {
       const updateData = { ...data };
       if (updateData.password) {
