@@ -2,6 +2,7 @@ import express from "express";
 import type { Application } from "express";
 import morgan from "morgan";
 import { userRoutes } from "./routes/UserRoutes";
+import { linkRoutes } from "./routes/LinkRoutes";
 
 class App {
   private app: Application;
@@ -20,6 +21,7 @@ class App {
 
   private routes() {
     this.app.use("/users", userRoutes);
+    this.app.use("/links", linkRoutes);
   }
 
   public Start(port: number) {
