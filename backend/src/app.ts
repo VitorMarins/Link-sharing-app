@@ -1,6 +1,7 @@
 import express from "express";
 import type { Application } from "express";
 import morgan from "morgan";
+import helmet from "helmet";
 import { userRoutes, linkRoutes, authRoutes } from "./routes";
 
 class App {
@@ -16,6 +17,7 @@ class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan("dev"));
+    this.app.use(helmet());
   }
 
   private routes() {
