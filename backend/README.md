@@ -66,7 +66,8 @@ backend
 ## Configuração
 1. Crie um arquivo `.env` na raiz do diretório `backend` e adicione as seguintes variáveis de ambiente:
     ```env
-    DATABASE_URL=sua_string_de_conexão_mongodb
+    DATABASE_URL="sua_string_de_conexão_postgreSQL"
+    JWT_SECRET="seu_jwt_secret"
     PORT=3000
     ```
 
@@ -94,6 +95,3 @@ backend
   - `POST /api/links` - Criar um novo conceito (requer autenticação)
   - `PUT /api/links/:id` - Atualizar conceito por ID (requer autenticação)
   - `DELETE /api/links/:id` - Deletar conceito por ID (requer autenticação)
-
-## Licença
-Este projeto está licenciado sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
