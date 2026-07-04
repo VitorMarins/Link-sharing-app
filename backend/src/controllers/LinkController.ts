@@ -80,7 +80,7 @@ export class LinkController {
           .string()
           .min(2, "Title must be at least 2 characters long")
           .optional(),
-        url: z.email("Invalid email address").optional(),
+        url: z.url("Invalid URL").optional(),
       });
       const result = updateLinkSchema.safeParse(req.body);
       if (!result.success) {
