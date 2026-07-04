@@ -1,9 +1,3 @@
-import type {
-  CreateLinkData,
-  UpdateLinkData,
-  LinkDTO,
-} from "./ILinksRepository";
-
 export interface CreateUserData {
   name: string;
   email: string;
