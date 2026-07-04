@@ -1,4 +1,8 @@
-import type { CreateLinkData, UpdateLinkData, LinkDTO } from './ILinksRepository';
+import type {
+  CreateLinkData,
+  UpdateLinkData,
+  LinkDTO,
+} from "./ILinksRepository";
 
 export interface CreateUserData {
   name: string;
