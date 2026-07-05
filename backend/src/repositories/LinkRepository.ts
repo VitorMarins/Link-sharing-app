@@ -26,10 +26,10 @@ export class LinkRepository implements ILinksRepository {
     });
   }
 
-  async update(id: string, data: Partial<UpdateLinkData>) {
+  async update(id: string, data: UpdateLinkData) {
     return await prisma.link.update({
       where: { id: id },
-      data: { ...data },
+      data: data,
     });
   }
 
