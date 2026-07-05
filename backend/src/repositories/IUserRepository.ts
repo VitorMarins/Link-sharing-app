@@ -1,9 +1,10 @@
+import type { LinkDTO } from './ILinkRepository';
+
 export interface CreateUserData {
   name: string;
   email: string;
   password: string;
   username: string;
-  Links?: CreateLinkData[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -13,7 +14,6 @@ export interface UpdateUserData {
   email: string;
   password: string;
   username: string;
-  Links?: UpdateLinkData[];
   updatedAt: Date;
 }
 
@@ -23,7 +23,7 @@ export interface UserDTO {
   email: string;
   password: string;
   username: string;
-  Links?: LinkDTO[];
+  links?: LinkDTO[];
   createdAt: Date;
   updatedAt: Date;
 }
