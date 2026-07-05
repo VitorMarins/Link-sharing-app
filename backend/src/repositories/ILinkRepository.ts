@@ -27,6 +27,6 @@ export interface ILinksRepository {
   findAll(): Promise<LinkDTO[]>;
   findById(id: string): Promise<LinkDTO | null>;
   findByUserId(userId: string): Promise<LinkDTO[]>;
-  update(id: string, data: Partial<UpdateLinkData>): Promise<LinkDTO>;
+  update(id: string, data: UpdateLinkData): Promise<LinkDTO>;
   delete(id: string): Promise<void>;
 }
