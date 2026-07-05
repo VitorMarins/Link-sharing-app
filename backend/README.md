@@ -19,31 +19,42 @@ backend
 ├── prisma.config.ts
 ├── README.md
 ├── tsconfig.json
-├── generated/
-│   └── prisma/
-│       ├── browser.ts
-│       ├── client.ts
-│       ├── commonInputTypes.ts
-│       ├── enums.ts
-│       ├── models.ts
-│       ├── internal/
-│       │   ├── class.ts
-│       │   ├── prismaNamespace.ts
-│       │   └── prismaNamespaceBrowser.ts
-│       └── models/
-│           ├── Link.ts
-│           └── User.ts
 ├── prisma/
 │   ├── schema.prisma
 │   └── migrations/
 │       ├── migration_lock.toml
-│       └── 20260629133432_init/
+│       ├── 20260629133432_init/
+│       │   └── migration.sql
+│       └── 20260630125753_adjust_user_and_link_fields/
 │           └── migration.sql
 ├── src/
 │   ├── app.ts
 │   ├── index.ts
 │   ├── config/
-│   └── middlewares/
+│   │   ├── database.ts
+│   │   └── jwt.ts
+│   ├── controllers/
+│   │   ├── AuthController.ts
+│   │   ├── LinkController.ts
+│   │   └── UserController.ts
+│   ├── middlewares/
+│   │   └── authMiddleware.ts
+│   ├── repositories/
+│   │   ├── ILinkRepository.ts
+│   │   ├── IUserRepository.ts
+│   │   ├── LinkRepository.ts
+│   │   └── UserRepository.ts
+│   ├── routes/
+│   │   ├── AuthRoutes.ts
+│   │   ├── LinkRoutes.ts
+│   │   ├── UserRoutes.ts
+│   │   └── index.ts
+│   ├── services/
+│   │   ├── AuthService.ts
+│   │   ├── LinkService.ts
+│   │   └── UserService.ts
+│   └── utils/
+│       └── password.ts
 └── test/
 ```
 
