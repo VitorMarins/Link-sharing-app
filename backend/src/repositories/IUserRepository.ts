@@ -1,4 +1,4 @@
-import type { LinkDTO } from './ILinkRepository';
+import type { LinkDTO } from "./ILinkRepository";
 
 export interface CreateUserData {
   name: string;
