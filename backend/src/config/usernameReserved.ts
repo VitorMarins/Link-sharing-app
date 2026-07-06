@@ -1,4 +1,4 @@
-const usernamesReserved = [
+const usernamesReserved: string[] = [
   "admin",
   "api",
   "www",
