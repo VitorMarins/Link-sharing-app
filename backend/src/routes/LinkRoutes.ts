@@ -3,7 +3,7 @@ import { LinkRepository } from "../repositories/LinkRepository";
 import { LinkService } from "../services/LinkService";
 import { LinkController } from "../controllers/LinkController";
 import { userService } from "./UserRoutes";
-import authMiddleware from "../middlewares/authMiddleware";
+import { authMiddleware } from "../middlewares";
 
 const linkRoutes: Router = Router();
 const linkRepository = new LinkRepository();

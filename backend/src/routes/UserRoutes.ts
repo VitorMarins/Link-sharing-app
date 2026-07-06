@@ -2,7 +2,7 @@ import { Router } from "express";
 import { UserRepository } from "../repositories/UserRepository";
 import { UserService } from "../services/UserService";
 import { UserController } from "../controllers/UserController";
-import authMiddleware from "../middlewares/authMiddleware";
+import { authMiddleware, extractSubdomain } from "../middlewares";
 
 const userRoutes: Router = Router();
 const userRepository = new UserRepository();
@@ -18,7 +18,7 @@ userRoutes.get("/", authMiddleware, (req, res) =>
 userRoutes.get("/:id", authMiddleware, (req, res) =>
   userController.findById(req, res)
 );
-userRoutes.get("/public-profile", authMiddleware, (req, res) =>
+userRoutes.get("/public-profile", authMiddleware, extractSubdomain, (req, res) =>
   userController.findByUsername(req, res)
 );
 userRoutes.put("/:id", authMiddleware, (req, res) =>
