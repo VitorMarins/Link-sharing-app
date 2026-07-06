@@ -14,7 +14,7 @@ export class UserService {
       throw new Error("Email already exists");
     }
 
-    if(usernamesReserved.includes(data.username.toLowerCase())) {
+    if (usernamesReserved.includes(data.username.toLowerCase())) {
       throw new Error("Username is reserved");
     }
 
