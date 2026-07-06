@@ -91,18 +91,19 @@ backend
 
 ## Endpoints Principais
 - **Autenticação**
-  - `POST /api/auth/registrar` - Registrar um novo usuário (requer autenticação)
   - `POST /api/auth/login` - Login de usuário
 
 - **Usuários**
   - `GET /api/usuarios` - Obter todos os usuários (requer autenticação)
   - `GET /api/usuarios/:id` - Obter usuário por ID (requer autenticação)
+  - `POST /api/usuarios` - Criar um novo usuário (requer autenticação)
   - `PUT /api/usuarios/:id` - Atualizar usuário por ID (requer autenticação)
   - `DELETE /api/usuarios/:id` - Deletar usuário por ID (requer autenticação)
 
 - **Links**
-  - `GET /api/links` - Obter todos os conceitos (requer autenticação)
-  - `GET /api/links/:id` - Obter conceito por ID (requer autenticação)
-  - `POST /api/links` - Criar um novo conceito (requer autenticação)
-  - `PUT /api/links/:id` - Atualizar conceito por ID (requer autenticação)
-  - `DELETE /api/links/:id` - Deletar conceito por ID (requer autenticação)
+  - `GET /api/links` - Obter todos os links (requer autenticação)
+  - `GET /api/links/:id` - Obter link por ID (requer autenticação)
+  - `GET /api/links/user/:userId` - Obter links por ID de Usuario (requer autenticação)
+  - `POST /api/links` - Criar um novo link (requer autenticação)
+  - `PUT /api/links/:id` - Atualizar link por ID (requer autenticação)
+  - `DELETE /api/links/:id` - Deletar link por ID (requer autenticação)
