@@ -62,14 +62,18 @@ export class UserController {
         return res.status(400).json({ error: "Nenhum perfil especificado." });
       }
       const usernameParamSchema = z.object({
-        username: z.string().min(2, "Username must be at least 2 characters long"),
+        username: z
+          .string()
+          .min(2, "Username must be at least 2 characters long"),
       });
       const { username } = usernameParamSchema.parse(req.subdomain);
       const profile = await this.userService.findByUsername(username);
       res.status(200).json(profile);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        return res.status(400).json({ message: "Username inválido ou ausente" });
+        return res
+          .status(400)
+          .json({ message: "Username inválido ou ausente" });
       }
       return res.status(500).json({ error: (error as Error).message });
     }
