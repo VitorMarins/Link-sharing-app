@@ -18,6 +18,9 @@ userRoutes.get("/", authMiddleware, (req, res) =>
 userRoutes.get("/:id", authMiddleware, (req, res) =>
   userController.findById(req, res)
 );
+userRoutes.get("/public-profile", authMiddleware, (req, res) =>
+  userController.findByUsername(req, res)
+);
 userRoutes.put("/:id", authMiddleware, (req, res) =>
   userController.update(req, res)
 );
