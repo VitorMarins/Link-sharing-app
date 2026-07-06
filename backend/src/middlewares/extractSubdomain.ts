@@ -1,6 +1,10 @@
-import type { Request, Response, NextFunction } from 'express';
+import type { Request, Response, NextFunction } from "express";
 
-export const extractSubdomain = (req: Request, res: Response, next: NextFunction) => {
+export const extractSubdomain = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const host = req.headers.host;
 
   if (!host) {
@@ -8,13 +12,13 @@ export const extractSubdomain = (req: Request, res: Response, next: NextFunction
     return next();
   }
 
-  const parts = host.split('.');
+  const parts = host.split(".");
 
   if (parts.length > 2) {
-    req.subdomain = parts[0] || null; 
+    req.subdomain = parts[0] || null;
   } else {
     req.subdomain = null;
   }
-  
+
   next();
 };
