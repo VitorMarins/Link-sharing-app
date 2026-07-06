@@ -1,4 +1,5 @@
 import { hashPassword } from "../utils/password";
+import usernamesReserved from "../config/usernameReserved";
 import type {
   IUsersRepository,
   CreateUserData,
@@ -12,13 +13,20 @@ export class UserService {
     if (await this.usersRepository.findByEmail(data.email)) {
       throw new Error("Email already exists");
     }
+
+    if(usernamesReserved.includes(data.username.toLowerCase())) {
+      throw new Error("Username is reserved");
+    }
+
     if (await this.usersRepository.findByUsername(data.username)) {
       throw new Error("Username already exists");
     }
     const hashedPassword = await hashPassword(data.password);
     return await this.usersRepository.create({
-      ...data,
+      name: data.name,
+      email: data.email.toLowerCase(),
       password: hashedPassword,
+      username: data.username.toLowerCase(),
       createdAt: new Date(),
       updatedAt: new Date(),
     });
