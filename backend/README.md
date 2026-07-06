@@ -4,7 +4,7 @@
 Link-Sharing App API é uma api focada em armazenar os dados usuarios e links para compartilhamento.
 
 ## Tecnologias Usadas
-[![My Skills](https://skillicons.dev/icons?i=ts,nodejs,express,postgres,pnpm,postman)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ts,nodejs,express,prisma,postgres,pnpm,postman)](https://skillicons.dev)
 
 ## Estrutura do Projeto
 
