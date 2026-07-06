@@ -96,6 +96,7 @@ backend
 - **Usuários**
   - `GET /api/usuarios` - Obter todos os usuários (requer autenticação)
   - `GET /api/usuarios/:id` - Obter usuário por ID (requer autenticação)
+  - `GET /api/usuarios/public-profile` - Obter usuário por username (requer autenticação)
   - `POST /api/usuarios` - Criar um novo usuário (requer autenticação)
   - `PUT /api/usuarios/:id` - Atualizar usuário por ID (requer autenticação)
   - `DELETE /api/usuarios/:id` - Deletar usuário por ID (requer autenticação)
