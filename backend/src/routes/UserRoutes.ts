@@ -9,20 +9,15 @@ const userRepository = new UserRepository();
 const userService = new UserService(userRepository);
 const userController = new UserController(userService);
 
-userRoutes.post("/", authMiddleware, (req, res) =>
-  userController.create(req, res)
-);
+userRoutes.post("/", (req, res) => userController.create(req, res));
 userRoutes.get("/", authMiddleware, (req, res) =>
   userController.findAll(req, res)
 );
 userRoutes.get("/:id", authMiddleware, (req, res) =>
   userController.findById(req, res)
 );
-userRoutes.get(
-  "/public-profile",
-  authMiddleware,
-  extractSubdomain,
-  (req, res) => userController.findByUsername(req, res)
+userRoutes.get("/public-profile", extractSubdomain, (req, res) =>
+  userController.findByUsername(req, res)
 );
 userRoutes.put("/:id", authMiddleware, (req, res) =>
   userController.update(req, res)
