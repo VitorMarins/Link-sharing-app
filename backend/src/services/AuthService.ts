@@ -1,13 +1,13 @@
 import { SignJWT } from "jose";
 import { comparePassword } from "../utils/password";
-import type { IUsersRepository } from "../repositories/IUserRepository";
+import { UserService } from "../services/UserService";
 import { secret } from "../config/jwt";
 
 export class AuthService {
-  constructor(private usersRepository: IUsersRepository) {}
+  constructor(private usersService: UserService) {}
 
   async login(email: string, password: string): Promise<any> {
-    const user = await this.usersRepository.findByEmail(email);
+    const user = await this.usersService.findByEmail(email);
     if (!user) {
       throw new Error("User not found");
     }
