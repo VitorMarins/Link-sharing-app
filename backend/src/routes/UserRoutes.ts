@@ -25,5 +25,5 @@ userRoutes.put("/:id", authMiddleware, (req, res) =>
 userRoutes.delete("/:id", authMiddleware, (req, res) =>
   userController.delete(req, res)
 );
-  
+
 export { userRoutes };
