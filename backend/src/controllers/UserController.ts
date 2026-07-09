@@ -61,12 +61,10 @@ export class UserController {
       if (!req.subdomain) {
         return res.status(400).json({ error: "Nenhum perfil especificado." });
       }
-      const usernameParamSchema = z.object({
-        username: z
-          .string()
-          .min(2, "Username must be at least 2 characters long"),
-      });
-      const { username } = usernameParamSchema.parse(req.subdomain);
+      const usernameParamSchema = z
+        .string()
+        .min(2, "Username must be at least 2 characters long");
+      const username = usernameParamSchema.parse(req.subdomain);
       const profile = await this.userService.findByUsername(username);
       res.status(200).json(profile);
     } catch (error) {
