@@ -1,13 +1,10 @@
 import { Router } from "express";
-import { UserRepository } from "../repositories/UserRepository";
-import { UserService } from "../services/UserService";
-import { UserController } from "../controllers/UserController";
+import { makeUserController } from "../controllers";
 import { authMiddleware, extractSubdomain } from "../middlewares";
 
 const userRoutes: Router = Router();
-const userRepository = new UserRepository();
-const userService = new UserService(userRepository);
-const userController = new UserController(userService);
+
+const userController = makeUserController();
 
 userRoutes.post("/", (req, res) => userController.create(req, res));
 userRoutes.get("/", authMiddleware, (req, res) =>
